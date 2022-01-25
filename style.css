@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  background-color: #1f5cbf;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #1f5cbf;
+  height: 100vh;
+  background: #f5f2f0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  position: relative;
+  height: 500px;
+  width: 350px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 15px #808080;
+          box-shadow: 0 0 15px #808080;
+}
+
+.painting {
+  position: absolute;
+  inset: 15px;
+}
+/*# sourceMappingURL=style.css.map */

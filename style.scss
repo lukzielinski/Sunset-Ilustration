@@ -1,0 +1,62 @@
+$haze: (
+    1: (110px, 4px),
+    2: (130px, 8px),
+    3: (15px, 12px),
+    4: (170px, 16px),
+);
+$mountain: (
+    1: (-25%, #1f5cbf),
+    2: (-17%, #3a6ec2),
+    3: (-9%, #5681c7),
+    4: (0, #92abd4),
+);
+$tree: (
+    1: (-50px, 100px, 70px, 40px, #1f5cbf),
+    2: (-20px, 200px, 50px, 28px, #1f5cbf),
+    3: (-10px, 340px, 30px, 16px, #4176cc),
+    4: (10px, 90px, 25px, 14px, #6a8fcc),
+);
+
+@mixin position($top: null, $right: null, $bottom: null, $left:null) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $left;
+}
+
+@mixin triangle($height, $width, $color) {
+    $falfWidth: $width / 2;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 $halfWidth $height $halfWidth;
+    border-color: transparent transparent $color transparent;
+}
+
+* {
+    padding: 0;
+    background-color: #1f5cbf;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1f5cbf;
+    height: 100vh;
+    background: #f5f2f0;
+    display: grid;
+    place-items: center;
+}
+
+.container { 
+    position: relative;
+    height: 500px;
+    width: 350px;
+    background: #fff;
+    box-shadow: 0 0 15px #808080;
+}
+
+.painting {
+    @include position();
+    inset: 15px;
+}

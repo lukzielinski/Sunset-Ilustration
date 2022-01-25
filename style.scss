@@ -5,9 +5,9 @@ $haze: (
     4: (170px, 16px),
 );
 $mountain: (
-    1: (-25%, #1f5cbf),
+    1: (-20%, #1f5cbf),
     2: (-17%, #3a6ec2),
-    3: (-9%, #5681c7),
+    3: (-13%, #5681c7),
     4: (0, #92abd4),
 );
 $tree: (
@@ -15,6 +15,7 @@ $tree: (
     2: (-20px, 200px, 50px, 28px, #1f5cbf),
     3: (-10px, 340px, 30px, 16px, #4176cc),
     4: (10px, 90px, 25px, 14px, #6a8fcc),
+    5: (10px, 90px, 25px, 16px, #6a8fcc),
 );
 
 @mixin position($top: null, $right: null, $bottom: null, $left:null) {
@@ -35,8 +36,8 @@ $tree: (
 }
 
 * {
-    padding: 0;
-    margin: 0;
+    // padding: 0;
+    // margin: 0;
 }
 
 body {
@@ -44,7 +45,6 @@ body {
     background: radial-gradient(ellipse at bottom, #1b2735, #090a0f 100%);
     overflow: hidden;
     display: grid;
-    place-items: center;
 }
 
 .container { 
@@ -53,12 +53,15 @@ body {
     width: 350px;
     background: #fff;
     box-shadow: 0 0 15px #808080;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .painting {
     @include position();
     inset: 15px;
-    background: #d6c7ba;
+    background: #fbbd87;
     overflow: hidden;
 }
 
@@ -96,8 +99,49 @@ body {
     .haze-#{$i} {
         $listItems: map-get($haze, $i);
         width: 100%;
-        background: #d6c7ba;
+        background: #fbbd87;
         @include position($top: nth($listItems, 1));
         height: nth($listItems, 2);
+    }
+}
+@function random_range($min, $max){
+    $rand: random();
+    $random_range: $min + floor($rand * ($max - $min) + 1);
+    @return $random_range;
+}
+
+.snow {
+    $total: 200;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+
+    @for $i from 1 through $total {
+        $random-x: random(1000000) * 0.0001vw;
+        $random-scale: random(10000) * 0.0001;
+        $fall-duration: random_range(10, 30) * 1s;
+        $fall-delay: random(30) * -1s;
+        $random-time: random_range(30000, 80000) / 100000;
+        $random-y: $random-time * 100vh;
+        $random-offset: random_range(-100000,100000) * 0.0001vw;
+        $random-x-end: $random-x + $random-offset;
+        $random-x-end: $random-x + ($random-offset / 2);
+        &:nth-child(#{$i}) {
+            opacity: random(10000) * 0.0001;
+            transform: translate($random-x, -10px) scale($random-scale);
+            animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+        }
+        
+        @keyframes fall-#{$i} {
+            #{percentagle($random-time)} {
+                transform: translate($random-x-end, $random-y) scale($random-scale);
+            }
+
+            to {
+                transform: translate($random-x-end, 100vh) scale($random-scale);
+            }
+        }
     }
 }

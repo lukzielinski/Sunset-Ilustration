@@ -1,15 +1,12 @@
 * {
   padding: 0;
-  background-color: #1f5cbf;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 body {
-  background-color: #1f5cbf;
   height: 100vh;
-  background: #f5f2f0;
+  background: radial-gradient(ellipse at bottom, #1b2735, #090a0f 100%);
+  overflow: hidden;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -65,6 +62,14 @@ body {
           transform: rotate(7deg);
 }
 
+.haze-1 {
+  width: 100%;
+  background: #d6c7ba;
+  position: absolute;
+  top: 110px;
+  height: 4px;
+}
+
 .mountain-2 {
   position: absolute;
   bottom: -17%;
@@ -87,6 +92,14 @@ body {
   border-color: transparent transparent #1f5cbf transparent;
   -webkit-transform: rotate(-7deg);
           transform: rotate(-7deg);
+}
+
+.haze-2 {
+  width: 100%;
+  background: #d6c7ba;
+  position: absolute;
+  top: 130px;
+  height: 8px;
 }
 
 .mountain-3 {
@@ -113,6 +126,14 @@ body {
           transform: rotate(7deg);
 }
 
+.haze-3 {
+  width: 100%;
+  background: #d6c7ba;
+  position: absolute;
+  top: 150px;
+  height: 12px;
+}
+
 .mountain-4 {
   position: absolute;
   bottom: 0;
@@ -135,5 +156,13 @@ body {
   border-color: transparent transparent #6a8fcc transparent;
   -webkit-transform: rotate(-7deg);
           transform: rotate(-7deg);
+}
+
+.haze-4 {
+  width: 100%;
+  background: #d6c7ba;
+  position: absolute;
+  top: 170px;
+  height: 16px;
 }
 /*# sourceMappingURL=style.css.map */

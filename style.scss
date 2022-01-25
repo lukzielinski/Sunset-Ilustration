@@ -36,15 +36,13 @@ $tree: (
 
 * {
     padding: 0;
-    background-color: #1f5cbf;
     margin: 0;
-    box-sizing: border-box;
 }
 
 body {
-    background-color: #1f5cbf;
     height: 100vh;
-    background: #f5f2f0;
+    background: radial-gradient(ellipse at bottom, #1b2735, #090a0f 100%);
+    overflow: hidden;
     display: grid;
     place-items: center;
 }
@@ -94,5 +92,12 @@ body {
         } @else {
             transform: rotate(7deg);
         }
+    }
+    .haze-#{$i} {
+        $listItems: map-get($haze, $i);
+        width: 100%;
+        background: #d6c7ba;
+        @include position($top: nth($listItems, 1));
+        height: nth($listItems, 2);
     }
 }

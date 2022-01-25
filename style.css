@@ -27,5 +27,61 @@ body {
 .painting {
   position: absolute;
   inset: 15px;
+  background: #2e2e2e;
+  overflow: hidden;
+}
+
+.sun {
+  position: absolute;
+  top: 70px;
+  left: 30px;
+  height: 200px;
+  width: 200px;
+  background: #db7e2c;
+  border-radius: 50%;
+}
+
+.mountain-1 {
+  position: absolute;
+  bottom: -25%;
+  left: -20%;
+  background: #1f5cbf;
+  width: 150%;
+  height: 200px;
+  -webkit-transform: rotate(-7deg);
+          transform: rotate(-7deg);
+}
+
+.mountain-2 {
+  position: absolute;
+  bottom: -17%;
+  left: -20%;
+  background: #3a6ec2;
+  width: 150%;
+  height: 200px;
+  -webkit-transform: rotate(7deg);
+          transform: rotate(7deg);
+}
+
+.mountain-3 {
+  position: absolute;
+  bottom: -9%;
+  left: -20%;
+  background: #5681c7;
+  width: 150%;
+  height: 200px;
+  -webkit-transform: rotate(-7deg);
+          transform: rotate(-7deg);
+}
+
+.mountain-4 {
+  position: absolute;
+  bottom: 0;
+  left: -20%;
+  background: #92abd4;
+  width: 150%;
+  height: 200px;
+  -webkit-transform: rotate(7deg);
+          transform: rotate(7deg);
 }
 /*# sourceMappingURL=style.css.map */

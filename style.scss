@@ -1,7 +1,7 @@
 $haze: (
     1: (110px, 4px),
     2: (130px, 8px),
-    3: (15px, 12px),
+    3: (150px, 12px),
     4: (170px, 16px),
 );
 $mountain: (
@@ -21,7 +21,8 @@ $tree: (
     position: absolute;
     top: $top;
     right: $right;
-    bottom: $left;
+    bottom: $bottom;
+    left: $left;
 }
 
 @mixin triangle($height, $width, $color) {
@@ -59,4 +60,32 @@ body {
 .painting {
     @include position();
     inset: 15px;
+    background: #2e2e2e;
+    overflow: hidden;
+}
+
+.sun{
+    @include position($top: 70px, $left: 30px);
+    height: 200px;
+    width: 200px;
+    background: #db7e2c;
+    border-radius: 50%;
+}
+
+@for $i from 1 through 4 {
+    .mountain-#{$i} {
+        $listItems: map-get($mountain, $i);
+        @include position($left: -20%, $bottom: nth($listItems, 1));
+        background: nth($listItems, 2);
+        width: 150%;
+        height: 200px;
+        @if $i % 2 == 0 {
+            transform: rotate(7deg);
+        } @else {
+            transform: rotate(-7deg);
+        }
+    }
+    .tree-#{$i} {
+
+    }
 }

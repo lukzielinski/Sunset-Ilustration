@@ -26,7 +26,7 @@ $tree: (
 }
 
 @mixin triangle($height, $width, $color) {
-    $falfWidth: $width / 2;
+    $halfWidth: $width / 2;
     width: 0;
     height: 0;
     border-style: solid;
@@ -60,7 +60,7 @@ body {
 .painting {
     @include position();
     inset: 15px;
-    background: #2e2e2e;
+    background: #d6c7ba;
     overflow: hidden;
 }
 
@@ -86,6 +86,13 @@ body {
         }
     }
     .tree-#{$i} {
-
+        $listItems: map-get($tree, $i);
+        @include position($top: nth($listItems, 1), $left: nth($listItems, 2));
+        @include triangle(nth($listItems, 3), nth($listItems, 4), nth($listItems, 5));
+        @if $i % 2 == 0 {
+            transform: rotate(-7deg);
+        } @else {
+            transform: rotate(7deg);
+        }
     }
 }

@@ -27,7 +27,7 @@ body {
 .painting {
   position: absolute;
   inset: 15px;
-  background: #2e2e2e;
+  background: #d6c7ba;
   overflow: hidden;
 }
 
@@ -52,6 +52,19 @@ body {
           transform: rotate(-7deg);
 }
 
+.tree-1 {
+  position: absolute;
+  top: -50px;
+  left: 100px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 70px 20px;
+  border-color: transparent transparent #1f5cbf transparent;
+  -webkit-transform: rotate(7deg);
+          transform: rotate(7deg);
+}
+
 .mountain-2 {
   position: absolute;
   bottom: -17%;
@@ -61,6 +74,19 @@ body {
   height: 200px;
   -webkit-transform: rotate(7deg);
           transform: rotate(7deg);
+}
+
+.tree-2 {
+  position: absolute;
+  top: -20px;
+  left: 200px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 14px 50px 14px;
+  border-color: transparent transparent #1f5cbf transparent;
+  -webkit-transform: rotate(-7deg);
+          transform: rotate(-7deg);
 }
 
 .mountain-3 {
@@ -74,6 +100,19 @@ body {
           transform: rotate(-7deg);
 }
 
+.tree-3 {
+  position: absolute;
+  top: -10px;
+  left: 340px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 30px 8px;
+  border-color: transparent transparent #4176cc transparent;
+  -webkit-transform: rotate(7deg);
+          transform: rotate(7deg);
+}
+
 .mountain-4 {
   position: absolute;
   bottom: 0;
@@ -83,5 +122,18 @@ body {
   height: 200px;
   -webkit-transform: rotate(7deg);
           transform: rotate(7deg);
+}
+
+.tree-4 {
+  position: absolute;
+  top: 10px;
+  left: 90px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7px 25px 7px;
+  border-color: transparent transparent #6a8fcc transparent;
+  -webkit-transform: rotate(-7deg);
+          transform: rotate(-7deg);
 }
 /*# sourceMappingURL=style.css.map */
